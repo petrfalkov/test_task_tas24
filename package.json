@@ -1,0 +1,37 @@
+{
+  "name": "test_task_tas25",
+  "version": "0.0.1",
+  "description": "",
+  "main": "server/main.js",
+  "author": "igor.chubarets",
+  "license": "propietary",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-inline-base64": "^0.1.5",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-minify": "^2.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-shell": "^0.6.5",
+    "gulp-sourcemaps": "^2.6.2",
+    "gulp-streamify": "^1.0.2",
+    "gulp-task-listing": "^1.0.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "minifier": "^0.8.1",
+    "sass-include-paths": "^4.10.0",
+    "uglifyjs": "^2.4.11"
+  },
+  "dependencies": {
+    "cron": "*",
+    "express": "*",
+    "express-handlebars": "*",
+    "path": "*",
+    "pg": "^7.4.3",
+    "pg-copy-streams": "^1.2.0"
+  }
+}

@@ -1,0 +1,28 @@
+.container {
+  display: block;
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.container .chart_container {
+  position: relative;
+  display: inline-block;
+  width: 45%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  margin-left: 5%;
+}
+
+.container .chart_container.left {
+  float: left;
+}
+
+.container .chart_container.right {
+  float: left;
+  margin-left: 10px;
+}
