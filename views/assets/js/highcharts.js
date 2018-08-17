@@ -11,7 +11,7 @@ function buildCharts(filename, title, container) {
             // Split the lines
             var lines = data.split('\n');
 
-            options = {
+            var options = {
                 chart: {
                     type: 'column'
                 },
@@ -62,9 +62,17 @@ function buildCharts(filename, title, container) {
                 },
                 series: []
             };
-            var dataItemNo = 0;
+            var item_categories = [];
+
+            item_categories = (lines[0].substring(1, lines[0].length - 1)).split(',');
+            item_categories = item_categories.concat((lines[2].substring(1, lines[2].length - 1)).split(','));
+            item_categories = item_categories.concat((lines[4].substring(1, lines[4].length - 1)).split(','));
+            item_categories.forEach(function (item) {
+                item = item.trim();
+                options.xAxis.categories.push(item);
+            });
+            options.xAxis.categories.sort();
             lines.forEach(function(line, lineNo) {
-                var item_categories;
                 var amounts;
                 var series;
                 switch (lineNo) {
@@ -79,9 +87,7 @@ function buildCharts(filename, title, container) {
 
                         item_categories.forEach(function (item, itemNo) {
                             item = item.trim();
-                            options.xAxis.categories.push(item);
-                            series.data.push([dataItemNo, parseInt(amounts[itemNo], 10)]);
-                            dataItemNo++;
+                            series.data.push([$.inArray(item, options.xAxis.categories), parseInt(amounts[itemNo], 10)]);
                         });
                         options.series.push(series);
                         break;
@@ -96,13 +102,7 @@ function buildCharts(filename, title, container) {
 
                         item_categories.forEach(function (item, itemNo) {
                             item = item.trim();
-                            if ($.inArray(item, options.xAxis.categories) === -1) {
-                                options.xAxis.categories.push(item);
-                                series.data.push([dataItemNo, parseInt(amounts[itemNo], 10)]);
-                                dataItemNo++;
-                            } else {
-                                series.data.push([$.inArray(item, options.xAxis.categories), parseInt(amounts[itemNo], 10)]);
-                            }
+                            series.data.push([$.inArray(item, options.xAxis.categories), parseInt(amounts[itemNo], 10)]);
                         });
                         options.series.push(series);
                         break;
@@ -117,19 +117,15 @@ function buildCharts(filename, title, container) {
 
                         item_categories.forEach(function (item, itemNo) {
                             item = item.trim();
-
-                            if ($.inArray(item, options.xAxis.categories) === -1) {
-                                options.xAxis.categories.push(item);
-                                series.data.push([dataItemNo, -parseInt(amounts[itemNo], 10)]);
-                                dataItemNo++;
-                            } else {
-                                series.data.push([$.inArray(item, options.xAxis.categories), -parseInt(amounts[itemNo], 10)]);
-                            }
+                            series.data.push([$.inArray(item, options.xAxis.categories), -parseInt(amounts[itemNo], 10)]);
                         });
                         options.series.push(series);
                         break;
                 }
             });
+            // console.log(options.xAxis.categories);
+            // options.xAxis.categories.sort();
+            // console.log(options.xAxis.categories);
 
             Highcharts.chart(container, options);
         },

@@ -11,18 +11,14 @@
   position: relative;
   display: inline-block;
   width: 45%;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-  margin-left: 5%;
 }
 
 .container .chart_container.left {
   float: left;
+  left: 4%;
 }
 
 .container .chart_container.right {
-  float: left;
-  margin-left: 10px;
+  float: right;
+  right: 4%;
 }

@@ -10,16 +10,14 @@
     position: relative;
     display: inline-block;
     width: 45%;
-    top: 50%;
-    transform: translateY(-50%);
-    margin-left: 5%;
     &.left {
       float: left;
+      left: 4%;
     }
 
     &.right {
-      float: left;
-      margin-left: 10px;
+      float: right;
+      right: 4%;
     }
   }
 }

@@ -34,8 +34,8 @@ new CronJob('0 7 * * *', function() {
     );
 }, null, true, 'Europe/Kiev');
 
-app.listen("3300", function(){
-    console.log('Server up: http://localhost:3300');
+app.listen("3000", function(){
+    console.log('Server up: http://localhost:3000');
 });
 
 
