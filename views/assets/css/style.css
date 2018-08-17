@@ -8,17 +8,5 @@
 }
 
 .container .chart_container {
-  position: relative;
-  display: inline-block;
-  width: 45%;
-}
-
-.container .chart_container.left {
-  float: left;
-  left: 4%;
-}
-
-.container .chart_container.right {
-  float: right;
-  right: 4%;
+  margin-top: 20px;
 }

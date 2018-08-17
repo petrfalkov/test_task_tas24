@@ -19,7 +19,10 @@ function buildCharts(filename, title, container) {
                     text: title
                 },
                 xAxis: {
-                    categories: []
+                    categories: [],
+                    labels: {
+                        rotation: -90
+                    }
                 },
                 yAxis: {
                     title: {
@@ -53,6 +56,7 @@ function buildCharts(filename, title, container) {
                         stacking: 'normal',
                         dataLabels: {
                             enabled: true,
+                            align: 'left',
                             color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
                         }
                     }
@@ -69,7 +73,9 @@ function buildCharts(filename, title, container) {
             item_categories = item_categories.concat((lines[4].substring(1, lines[4].length - 1)).split(','));
             item_categories.forEach(function (item) {
                 item = item.trim();
-                options.xAxis.categories.push(item);
+                if ($.inArray(item, options.xAxis.categories) === -1) {
+                    options.xAxis.categories.push(item);
+                }
             });
             options.xAxis.categories.sort();
             lines.forEach(function(line, lineNo) {

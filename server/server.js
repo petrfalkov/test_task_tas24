@@ -26,11 +26,11 @@ app.get("/", function(req, res){
 new CronJob('0 7 * * *', function() {
     updateChartsController.updateChartsData(
         'phis_osoba', //filename
-        'предпрениматель' //category of account user
+        'FLP' //category of account user
     );
     updateChartsController.updateChartsData(
         'ur_osoba', //filename
-        'юр лицо' //category of account user
+        'JUR' //category of account user
     );
 }, null, true, 'Europe/Kiev');
 

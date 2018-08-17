@@ -1,1 +1,1 @@
-.container{display:block;position:absolute;padding:20px;width:100%;margin:0 auto;height:100%}.container .chart_container{position:relative;display:inline-block;width:45%}.container .chart_container.left{float:left;left:4%}.container .chart_container.right{float:right;right:4%}
+.container{display:block;position:absolute;padding:20px;width:100%;margin:0 auto;height:100%}.container .chart_container{margin-top:20px}

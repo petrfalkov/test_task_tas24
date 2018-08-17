@@ -9,6 +9,7 @@ module.exports = {
         const config = {
             user: DB.PG_USER, // name of the user account
             database: DB.PG_DATABASE, // name of the database
+            password: DB.PG_PASSWORD, // password for user account
             max: 10, // max number of clients in the pool
             idleTimeoutMillis: 30000 // how long a client is allowed to remain idle before being closed
         };
